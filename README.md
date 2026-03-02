@@ -1,58 +1,96 @@
-#  Mean and variance of a discrete  distribution
+# Experiment-1-Mean-and-Variance
+# Aim: 
+To find mean and variance of arrival objects from the feeder using probability distribution.
 
+# Software Required: Python and Visual Components tool
 
-# Aim : 
+# Theory: 
 
-To find mean and variance of arrival of objects from the feeder using probability distribution
+# 1. Mean (Expectation)
 
+The mean or expected value of a discrete random variable represents its average value, weighted by the probabilities of each possible outcome. It indicates the central tendency or typical value of the variable.
+It is calculated as:
 
-# Software required :  
-
-Python and Visual components tool
-
-# Theory:
-
-The expectation or the mean of a discrete random variable is a weighted average of all possible
-values of the random variable. The weights are the probabilities associated with the corresponding values. 
-It is calculated as,
-
-![image](https://user-images.githubusercontent.com/103921593/192938463-e34177f4-f188-48a0-bda2-8f6d1d660ed2.png)
-
-The variance of a random variable shows the variability or the scatterings of the random variables.
-It shows the distance of a random variable from its mean. It is calcualted as
-
-![image](https://user-images.githubusercontent.com/103921593/192938695-99fedc01-34d5-4d36-84df-5880e766ed0c.png)
-
-
-# Procedure :
-
-1. Construct frequency distribution for the data
-
-2. Find the  probability distribution from frequency distribution.
-
-3. Calculate mean using 
+<img width="306" height="73" alt="image" src="https://github.com/user-attachments/assets/5f2e0454-bf83-40d8-94f5-7f35b0cda25a" />
+										
+# 2. Variance
+The variance of a random variable measures how much the values of the variable vary from the mean. It shows the spread or dispersion of the data.
+It is calculated as:
+<img width="998" height="184" alt="image" src="https://github.com/user-attachments/assets/4807d369-afba-4736-b3a4-391effa3dcaf" />
+# Algorithm: Mean, Variance, and Standard Deviation of Feeder Arrivals
+1. Start the program.
    
-   ![image](https://user-images.githubusercontent.com/103921593/192940431-03b81777-c54d-4286-b4f4-82dfe7666b4c.png)
-
-4. Find  
+2. Input the arrival data (list of integers separated by spaces). Example: 0 1 1 2 2 3 3 3.
    
-      ![image](https://user-images.githubusercontent.com/103921593/192940255-2d9dd746-6875-4a6d-877b-6da6cdb96ab1.png)
+3. Find: N = total number of data values, M = maximum value in the data list.
+   
+4. Initialize two empty lists: x (for distinct arrival values) and f (for frequency of each arrival value).
+ 
+5. For each value i from 0 to M: count how many times i occurs in the data list, append i to x and its count to f.
+   
+6.Find total frequency: sf = sum(f).
 
-5.  Calculate variance using 
-  
-      ![image](https://user-images.githubusercontent.com/103921593/192942852-913550a9-fabe-4a55-b956-0487b18bbd97.png)
+7. Find probability for each arrival value: p[i] = f[i] / sf.
+   
+8. Calculate mean (expected value): mean = Σ(x[i] * p[i]).
+   
+9. Calculate E(X²) (the second moment): EX2 = Σ(x[i]² * p[i]).
+    
+10. Calculate variance: var = EX2 - (mean)².
+
+11. Calculate standard deviation: SD = √var.
+
+12. Display the Mean, Variance, and Standard Deviation of arrivals.
+
+13. Stop.
 
 
-# Experiment :
-
-![image](https://user-images.githubusercontent.com/103921593/229993174-5b67e57e-3e01-4ac4-9f83-410a932b22bf.png)
-
-# Program :
 
 
+# Program: 
 
-# Output : 
+**_Name : SRIDHAR C<br>
+ Reg No : 212225040425 <br>
+ Slot Name : T1-I5<br>
+ [colab link](https://colab.research.google.com/drive/1FJQPuB9WKvaRo8KecZllJO37fo79b2Ne#scrollTo=ME59jFqoie_k&line=26&uniqifier=1)_**  
 
-# Results :
-The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
+ ```py
+import numpy as np
+data=[int(i) for i in input("Enter Arrival data :").split()]
+Max=max(data)
+lenth=len(data)
+x=[]
+freq=[]
+for i in range(Max+1):
+  c=0
+  for j in range(lenth):
+    if data[j]==i:
+      c+=1
+  x.append(i)
+  freq.append(c)
+sf=np.sum(freq)
+p=[freq[i]/sf for i in range(Max+1)]
+mean=np.inner(x,p)
+ex2=np.inner(np.square(x),p)
+var=ex2-mean**2
+std=np.sqrt(var)
+print(f"X\tP(x)")
+for i in range(Max+1):
+  if freq[i]>0:
+    print(f'{x[i]}\t{p[i]:.3f} ')
+print(f"mean: {mean}")
+print(f'varience: {var}')
+print(f"standard deviation: {std}")
+```
+
+# Output:
+
+<img width="457" height="277" alt="image" src="https://github.com/user-attachments/assets/43709c8b-901a-49dc-acd7-a221742c3d43" />
+
+
+
+# Result: 
+	The mean and variance of arrivals of objects from feeder using probability distribution are calculated. 
+
+
 
