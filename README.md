@@ -85,4 +85,6 @@ print(f"standard deviation: {std}")
 <img width="457" height="277" alt="image" src="https://github.com/user-attachments/assets/43709c8b-901a-49dc-acd7-a221742c3d43" />
 
 # Result: 
+
+
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated. 
