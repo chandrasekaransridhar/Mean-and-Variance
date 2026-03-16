@@ -89,8 +89,4 @@ print(f"standard deviation: {std}")
 
 # Result: 
 
-
-	The mean and variance of arrivals of objects from feeder using probability distribution are calculated. 
-
-
-
+The mean and variance of arrivals of objects from feeder using probability distribution are calculated. 
